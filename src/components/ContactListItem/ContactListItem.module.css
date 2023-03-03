@@ -1,0 +1,30 @@
+.contactListItem {
+  display: flex;
+  justify-content: baseline;
+}
+
+.contactListItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contactListText {
+  display: flex;
+  justify-content: baseline;
+  font-size: 30px;
+  margin-right: 45px;
+}
+
+.buttonDelete {
+  padding: 9px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 3px;
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+.buttonDelete:hover {
+  background-color: #1e90ff;
+  color: white;
+}

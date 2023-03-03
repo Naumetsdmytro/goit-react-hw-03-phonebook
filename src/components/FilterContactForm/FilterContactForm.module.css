@@ -1,0 +1,23 @@
+.inputTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.inputText {
+  font-size: 29px;
+  margin-bottom: 12px;
+}
+
+.filterInput {
+  width: 250px;
+  height: 27px;
+  outline: none;
+  padding-left: 7px;
+  border: 1.9px solid gray;
+}
+
+.filterInput:focus {
+  border: 1.7px solid black;
+}
