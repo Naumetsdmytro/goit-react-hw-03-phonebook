@@ -17,9 +17,18 @@ export class ContactForm extends Component {
   };
 
   handleSubmit = evt => {
+    const { name } = this.state;
     evt.preventDefault();
-    this.props.onSubmit(this.state);
-    this.formReset();
+    if (
+      !this.props.contacts.some(
+        ({ name }) => name.toLowerCase() === this.state.name.toLowerCase()
+      )
+    ) {
+      this.formReset();
+      this.props.onSubmit(this.state);
+      return;
+    }
+    alert(`${name} is already in contacts.`);
   };
 
   formReset = () => {

@@ -34,14 +34,6 @@ export class App extends Component {
       name,
       number,
     };
-    if (
-      this.state.contacts.some(
-        ({ name }) => contact.name.toLowerCase() === name.toLowerCase()
-      )
-    ) {
-      alert(`${name} is already in contacts.`);
-      return;
-    }
     this.setState(({ contacts }) => {
       return {
         contacts: [contact, ...contacts],
@@ -68,7 +60,7 @@ export class App extends Component {
   };
 
   render() {
-    const { filter } = this.state;
+    const { filter, contacts } = this.state;
 
     const filteredContacts = this.getVisibleContacts();
 
@@ -81,7 +73,7 @@ export class App extends Component {
         className={style.container}
       >
         <h1 className={style.title}>Phonebook</h1>
-        <ContactForm onSubmit={this.addContact} />
+        <ContactForm onSubmit={this.addContact} contacts={contacts} />
         <h2 className={style.title}>Contacts</h2>
         <FilterContactForm value={filter} onChange={this.changeFilter} />
         <ContactList
